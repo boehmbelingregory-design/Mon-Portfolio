@@ -27,14 +27,15 @@ body {
 /* 2. EN-TÊTE (HEADER) */
 header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 5%;
-    position: sticky; /* Reste fixé en haut de l'écran lors du défilement */
+    justify-content: space-between; /* Logo à gauche, Nav à droite */
+    align-items: center; /* Tout aligné verticalement */
+    padding: 20px 5%; /* Un peu d'air autour */
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Une ombre légère pour la profondeur */
+    /* Pour qu'il reste fixé en haut quand on scrolle */
+    position: sticky;
     top: 0;
-    background-color: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    z-index: 100;
+    z-index: 1000;
 }
 
 header .logo {
@@ -43,12 +44,15 @@ header .logo {
     color: var(--couleur-principal);
 }
 
+header nav {
+    display: flex; /* Aligne les liens horizontalement */
+    gap: 30px; /* Espace régulier entre les liens */
+}
+
 header nav a {
     text-decoration: none;
     color: var(--couleur-texte);
-    margin-left: 20px;
     font-weight: 500;
-    transition: color 0.3s;
 }
 
 header nav a:hover {
@@ -56,17 +60,6 @@ header nav a:hover {
 }
 
 /* 3. SECTION HERO (PRÉSENTATION) */
-.hero {
-    min-height: 70vh; /* Prend 70% de la hauteur de l'écran */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 0 10%;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 20px;
@@ -194,4 +187,28 @@ footer h2 {
     header nav a {
         margin: 0 10px;
     }
+}
+
+/* Ta photo et ton texte sont dans une section HERO */
+.hero {
+    display: flex;
+    align-items: center; /* Aligne le texte et la photo verticalement */
+    justify-content: space-between; /* Écarte le texte et la photo */
+    padding: 60px 10%;
+    min-height: 80vh; /* Prend de la hauteur */
+}
+
+/* Ton conteneur de photo actuel */
+.hero-image img {
+    /* Ton contour bleu */
+    border: 3px solid var(--couleur-principal);
+    
+    /* NOS CORRECTIONS ICI 🎯 */
+    border-radius: 50%; /* Force le cercle */
+    aspect-ratio: 1 / 1; /* Force un carré parfait pour le conteneur */
+    object-fit: cover; /* Recadre l'image à l'intérieur pour qu'elle ne soit pas ovale */
+    
+    /* Taille de la photo sur PC */
+    width: 300px; 
+    height: 300px; 
 }
