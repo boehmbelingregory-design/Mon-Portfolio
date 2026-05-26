@@ -1,0 +1,197 @@
+/* 1. VARIABLES ET CONFIGURATION GLOBALE */
+:root {
+    --couleur-fond: #ffffff;
+    --couleur-texte: #2d3748;
+    --couleur-principal: #3182ce; /* Un bleu moderne */
+    --couleur-secondaire: #edf2f7;
+    --police: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Rends le defilemnet fluide quand on clique sur le menu */
+}
+
+body {
+    font-family: var(--police);
+    color: var(--couleur-texte);
+    background-color: var(--couleur-fond);
+    line-height: 1.6;
+}
+
+/* 2. EN-TÊTE (HEADER) */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    position: sticky; /* Reste fixé en haut de l'écran lors du défilement */
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    z-index: 100;
+}
+
+header .logo {
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: var(--couleur-principal);
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--couleur-texte);
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: var(--couleur-principal);
+}
+
+/* 3. SECTION HERO (PRÉSENTATION) */
+.hero {
+    min-height: 70vh; /* Prend 70% de la hauteur de l'écran */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 10%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--couleur-principal);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #4a5568;
+}
+
+.btn-contact {
+    display: inline-block;
+    background-color: var(--couleur-principal);
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.btn-contact:hover {
+    background-color: #2b6cb0;
+    transform: translateY(-2px); /* Petit effet de soulèvement au survol */
+}
+
+/* 4. SECTION PROJETS */
+.projets-section {
+    background-color: var(--couleur-secondaire);
+    padding: 60px 10%;
+}
+
+.projets-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+.grille-projets {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.carte-projet {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.carte-projet:hover {
+    transform: translateY(-5px);
+}
+
+.carte-projet h3 {
+    margin-bottom: 15px;
+    color: var(--couleur-texte);
+}
+
+.carte-projet p {
+    color: #718096;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.lien-projet {
+    text-decoration: none;
+    color: var(--couleur-principal);
+    font-weight: bold;
+}
+
+/* 5. PIED DE PAGE (FOOTER & CONTACT) */
+footer {
+    background-color: #1a202c;
+    color: white;
+    padding: 60px 10% 20px 10%;
+    text-align: center;
+}
+
+footer h2 {
+    margin-bottom: 30px;
+}
+
+.liens-contact {
+    margin-bottom: 40px;
+}
+
+.liens-contact a {
+    color: #a0aec0;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.liens-contact a:hover {
+    color: white;
+}
+
+.copyright {
+    font-size: 0.85rem;
+    color: #718096;
+}
+
+/* 6. RESPONSIVE DESIGN (MOBILE) */
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    header {
+        flex-direction: column; /* Sur mobile, le menu passe sous le logo */
+        gap: 15px;
+    }
+
+    header nav a {
+        margin: 0 10px;
+    }
+}
